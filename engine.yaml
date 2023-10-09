@@ -1,0 +1,7 @@
+onnx_path: './graphs/gs.onnx'
+load_engine_path: './engines/gs_int8.plan'
+is_int8: 1
+is_fp16: 0
+save_engine: 0
+save_engine_path: './engines/gs_int8_fallback.plan'
+#soFile: './skipLayerNormPlugin.so'

@@ -1,0 +1,41 @@
+work_dir: /share/work_dir/mnist
+weights: /share/work_dir/mnist/runs-59-221250.pt
+
+# feeder
+feeder: feeder.fashionMnist.Feeder
+train_feeder_args:
+  debug: False
+  state: 0
+
+test_feeder_args:
+  debug: False
+  state: 1
+
+# model
+model: model.vit.Model
+model_args:
+  classes: 10
+
+#training
+device: [1]
+batch_size: 16
+test_batch_size: 16
+
+#optim
+base_lr: 0.1
+step: [150, 225]
+num_epoch: 100
+lr_decay_rate: 1
+warm_up_epoch: 1
+save_epoch: 0
+weight_decay: 0
+momentum: 0
+seed: 42
+grad_norm: False
+clip: 1000
+
+compile: False
+#compile: default, reduce-overhead or max-autotune
+compile_mode: default
+AMP: False
+AMP_scaler: False
